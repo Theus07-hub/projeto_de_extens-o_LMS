@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login LMS</title>
+
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cadastro</h1>
+    </header>
+
+    <div class="login-box">
+
+        <p>Escolha o seu estilo de usuário</p>
+
+        <form action="/login" method="POST">
+
+            <label for="user">Escolha o User:</label>
+
+            <select id="user" name="user">
+                <option value="Aluno">Aluno</option>
+                <option value="ADM">ADM</option>
+            </select>
+
+            <br><br>
+
+            <label for="email">Digite o E-mail:</label><br>
+
+            <input 
+                type="email"
+                id="email"
+                name="email"
+                placeholder="E-mail..."
+                required
+            >
+
+            <br><br>
+
+            <label for="senha">Digite sua Senha:</label><br>
+
+            <input 
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite sua senha..."
+                required
+            >
+
+            <br><br>
+
+            <input type="submit" value="Entrar">
+
+        </form>
+
+        <br>
+
+        <a href="#">Esqueci minha senha</a>
+
+    </div>
+
+    <footer>
+        <p>Copyright © 2024 LMS. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

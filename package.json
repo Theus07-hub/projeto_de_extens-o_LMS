@@ -1,0 +1,27 @@
+{
+  "name": "projeto_de_extens-o_lms",
+  "version": "1.0.0",
+  "description": "\\#Criação de um sistema LMS para estudantes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theus07-hub/projeto_de_extens-o_LMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Theus07-hub/projeto_de_extens-o_LMS/issues"
+  },
+  "homepage": "https://github.com/Theus07-hub/projeto_de_extens-o_LMS#readme",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "prisma": "^5.22.0"
+  }
+}
