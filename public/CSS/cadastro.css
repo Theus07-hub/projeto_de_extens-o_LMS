@@ -27,8 +27,8 @@ header {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+header > h1 {
+    margin: 10px;
     font-size: 1.8rem;
 }
 
@@ -104,15 +104,6 @@ header h1 {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-h2{
-    text-align: center;
-}
-
-input::placeholder{
-    color: white;
-    font-weight: 700;
-}
-
 .menu li a:hover {
     background: rgba(13, 59, 102, 0.6);
     color: #ffffff;
@@ -132,10 +123,11 @@ main {
 /* Login Box - Estilo Card */
 .login-box {
     width: 100%;
-    margin: auto;
-    margin-bottom: 20px;
     max-width: 420px;
     padding: 28px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 12px;
     background: rgba(13, 27, 42, 0.85);
     border: 1px solid rgba(13, 59, 102, 0.5);
@@ -159,7 +151,8 @@ main {
 
 .login-box select,
 .login-box input[type="text"],
-.login-box input[type="Senha"],
+.login-box input[type="email"],
+.login-box input[type="password"],
 .login-box input[type="submit"] {
     width: 100%;
     padding: 11px 12px;
@@ -171,7 +164,8 @@ main {
 }
 
 .login-box input[type="text"],
-.login-box input[type="Senha"],
+.login-box input[type="email"],
+.login-box input[type="password"],
 .login-box select {
     outline: none;
     background: rgba(0, 0, 0, 0.3);
@@ -242,3 +236,5 @@ footer p {
 .links-extras:hover{
     text-decoration: underline;
 }
+
+

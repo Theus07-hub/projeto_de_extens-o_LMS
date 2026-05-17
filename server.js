@@ -27,6 +27,10 @@ app.get('/alunos', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/HTML/alunos.html'))
 })
 
+app.get('/cadastro', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/HTML/cadastro.html'))
+})
+
 app.listen(3000, () => {
     console.log('Servidor rodando...')
 })

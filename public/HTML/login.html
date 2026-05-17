@@ -10,55 +10,25 @@
 <body>
 
     <header>
-        <h1>Cadastro</h1>
+        <h1>Login</h1>
     </header>
 
     <div class="login-box">
 
-        <p>Escolha o seu estilo de usuário</p>
-
         <form action="/login" method="POST">
+            <h2>Faça seu login</h2> <br>
+            <label for="email">Digite o E-mail:</label>
+            <input type="text" id="email" placeholder="Digite seu email..."><br>
 
-            <label for="user">Escolha o User:</label>
-
-            <select id="user" name="user">
-                <option value="Aluno">Aluno</option>
-                <option value="ADM">ADM</option>
-            </select>
-
-            <br><br>
-
-            <label for="email">Digite o E-mail:</label><br>
-
-            <input 
-                type="email"
-                id="email"
-                name="email"
-                placeholder="E-mail..."
-                required
-            >
-
-            <br><br>
-
-            <label for="senha">Digite sua Senha:</label><br>
-
-            <input 
-                type="password"
-                id="senha"
-                name="senha"
-                placeholder="Digite sua senha..."
-                required
-            >
-
-            <br><br>
+            <label for="senha">Digite sua Senha:</label>
+            <input type="text" id="senha" placeholder="Digite sua senha..." required><br><br>
 
             <input type="submit" value="Entrar">
-
         </form>
 
         <br>
 
-        <a href="#">Esqueci minha senha</a>
+        <a class="links-extras" href="#">Esqueci minha senha</a> | <a class="links-extras" href="/cadastro">Não tem uma conta? Criar conta</a>
 
     </div>
 
