@@ -9,11 +9,12 @@ exports.register = async(nome, email, senha) => {
     if(usuarioExiste){
         const error = new Error("Usuário já cadastrado")
         error.status = 400
+        throw error
     }
 
     const senhaHash = await bcrypt.hash(senha, 10)
 
-    await userRepository.create({
+    await userRepository.createUser({
         nome, 
         email, 
         senha: senhaHash
@@ -30,6 +31,7 @@ exports.login = async(email, senha) => {
     if(!user){
         const error = new Error("Usuário não cadastrado")
         error.status = 404
+        throw error
     }
 
     const senhaValida = await bcrypt.compare(senha, user.senha)
@@ -37,6 +39,7 @@ exports.login = async(email, senha) => {
     if(!senhaValida){
         const error = new Error("Senha inválida")
         error.status = 401
+        throw error
     }
 
     const token = jwt.sign(

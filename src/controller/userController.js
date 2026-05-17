@@ -6,11 +6,11 @@ exports.register = async(req, res) => {
     try{
         const { nome, email, senha } = req.body
 
-        const result = await userService.register({
+        const result = await userService.register(
             nome, 
             email, 
             senha
-        })
+        )
 
         res.status(201).json({message: "Usuário cadastro com sucesso"})
     } catch(error) {
@@ -21,7 +21,7 @@ exports.register = async(req, res) => {
 
 exports.login = async(req, res) => {
     try{
-        const { email, senha} = req.body
+        const { email, senha } = req.body
 
         const result = await userService.login(email, senha)
 
