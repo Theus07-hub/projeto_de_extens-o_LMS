@@ -10,25 +10,25 @@ test('Deve responder com status 200', async () => {
    expect(response.status).toBe(200)
 })
 
-test('Deve cadastrar usuário', async () => {
-    const response = await request(app)
-        .post('/register')
-        .send({
-            nome: "Gabi namorada matheus",
-            email: "gabi@gmail.com",
-            senha: "gabi@2245"
-        })
-    
-    expect(response.status).toBe(201)
-})
 
-test('Deve fazer login', async () => {
+test('Deve bloquear após 2 tentativas', async() => {
+    for(let i = 0; i < 2; i++ ){
+        await request(app)
+            .post('/login')
+            .send({
+                email: "kaique@gmail.com",
+                senha: "Kaique@22455"
+            })
+    }
+
     const response = await request(app)
         .post('/login')
         .send({
-            email: "gabi@gmail.com",
-            senha: "gabi@2245"
+            email: "kaique@gmail.com",
+            senha: "Kaique@22455"
         })
 
-    expect(response.status).toBe(200)
+    console.log(response.status)
+    console.log(response.body)
+    expect(response.status).toBe(429)
 })

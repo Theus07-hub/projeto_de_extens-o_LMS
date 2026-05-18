@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const userRepository = require('../repositories/userRepository')
+const { regisSchema } = require('../validators/useValidator')
 
 exports.register = async(nome, email, senha) => {
     const usuarioExiste = await userRepository.findByEmail(email)

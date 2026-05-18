@@ -1,9 +1,14 @@
 const express = require('express')
 const userService = require('../service/userService')
 const userRepository = require('../repositories/userRepository')
+const { registerSchema } = require('../validators/useValidator')
+const { loginSchema } = require('../validators/useValidator')
 
 exports.register = async(req, res) => {
     try{
+
+        registerSchema.parse(req.body)
+        
         const { nome, email, senha } = req.body
 
         const result = await userService.register(
