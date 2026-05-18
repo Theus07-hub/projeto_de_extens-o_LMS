@@ -1,36 +1,9 @@
-const express = require('express')
-const app = express()
-const path = require('path')
+require('dotenv').config()
 
-const userRoutes = require('./src/routes/userRoutes')
+const app = require('./app')
 
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+const PORT = process.env.PORT || 3000
 
-app.use(express.static('public'))
-
-app.use(userRoutes)
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/HTML/index.html'))
-})
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/HTML/login.html'))
-})
-
-app.get('/cursos', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/HTML/cursos.html'))
-})
-
-app.get('/alunos', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/HTML/alunos.html'))
-})
-
-app.get('/cadastro', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/HTML/cadastro.html'))
-})
-
-app.listen(3000, () => {
-    console.log('Servidor rodando...')
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`)
 })
