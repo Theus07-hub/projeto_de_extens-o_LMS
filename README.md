@@ -27,5 +27,3 @@ Estou aqui para apresentar um projeto com um amigo de faculdade meu, estamos pro
 * Possuir um texto que seja livre mas esteja ligada a disciplina escolhida;
 * Ter um fórum com data e horário no calendário com temática determinada e Moderador;
 
-
-
