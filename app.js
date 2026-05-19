@@ -3,6 +3,7 @@ const app = express()
 const path = require('path')
 
 const userRoutes = require('./src/routes/userRoutes')
+const upload = require('./src/middleware/upload')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
@@ -10,6 +11,8 @@ app.use(express.json())
 app.use(express.static('public'))
 
 app.use(userRoutes)
+
+app.use('./src/uploads', express.static('uploads'))
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/HTML/index.html'))
@@ -29,6 +32,16 @@ app.get('/alunos', (req, res) => {
 
 app.get('/cadastro', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/HTML/cadastro.html'))
+})
+
+app.post('/register', upload.single('myFile'), async(req, res) => {
+
+    const { nome, email, senha } = req.body
+
+    const foto = req.file.filename
+
+    console.log(foto)
+
 })
 
 module.exports = app

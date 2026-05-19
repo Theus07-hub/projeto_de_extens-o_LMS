@@ -20,11 +20,13 @@
   "homepage": "https://github.com/Theus07-hub/projeto_de_extens-o_LMS#readme",
   "dependencies": {
     "@prisma/client": "^5.22.0",
+    "@prisma/config": "^7.8.0",
     "bcrypt": "^6.0.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
     "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
     "prisma": "file:5/client@5",
     "zod": "^4.4.3"
   },
