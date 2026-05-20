@@ -1,4 +1,5 @@
 const express = require('express')
+const router = express.Router()
 const userService = require('../service/userService')
 const userRepository = require('../repositories/userRepository')
 const { registerSchema } = require('../validators/useValidator')
@@ -6,15 +7,22 @@ const { loginSchema } = require('../validators/useValidator')
 
 exports.register = async(req, res) => {
     try{
+        console.log(req.body)
+        console.log(req.file)
 
         registerSchema.parse(req.body)
         
         const { nome, email, senha } = req.body
 
+        const foto_perfil = req.file?.filename
+
+        console.log(req.file)
+
         const result = await userService.register(
             nome, 
             email, 
-            senha
+            senha,
+            foto_perfil
         )
 
         res.status(201).json({message: "Usuário cadastro com sucesso"})

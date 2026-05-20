@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const userRepository = require('../repositories/userRepository')
 const { regisSchema } = require('../validators/useValidator')
 
-exports.register = async(nome, email, senha) => {
+exports.register = async(nome, email, senha, foto_perfil) => {
     const usuarioExiste = await userRepository.findByEmail(email)
 
     if(usuarioExiste){
@@ -18,7 +18,8 @@ exports.register = async(nome, email, senha) => {
     await userRepository.createUser({
         nome, 
         email, 
-        senha: senhaHash
+        senha: senhaHash,
+        foto_perfil
     })
 
     return{

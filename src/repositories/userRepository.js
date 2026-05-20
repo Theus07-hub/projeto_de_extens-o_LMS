@@ -10,6 +10,8 @@ exports.findByEmail = async(email) => {
 }
 
 exports.createUser = async(data) => {
+
+    console.log(data)
     return await prisma.usuario.create({
         data
     })
