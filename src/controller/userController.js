@@ -7,22 +7,20 @@ const { loginSchema } = require('../validators/useValidator')
 
 exports.register = async(req, res) => {
     try{
+
         console.log(req.body)
-        console.log(req.file)
 
         registerSchema.parse(req.body)
         
         const { nome, email, senha } = req.body
 
-        const foto_perfil = req.file?.filename
 
         console.log(req.file)
 
         const result = await userService.register(
             nome, 
             email, 
-            senha,
-            foto_perfil
+            senha
         )
 
         res.status(201).json({message: "Usuário cadastro com sucesso"})

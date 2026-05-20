@@ -3,7 +3,6 @@ model usuario {
     nome   String
     email  String @unique
     senha  String
-    foto_perfil String?
 }
 
 datasource db {

@@ -32,3 +32,13 @@ test('Deve bloquear após 2 tentativas', async() => {
     console.log(response.body)
     expect(response.status).toBe(429)
 })
+
+test('Deve cadastrar usuário', async () => {
+    const response = await request(app)
+        .post('/registe')
+        .send({
+            nome: "Bruno Melo",
+            email: "bruno@gmail.com",
+            senha: "Bruno@2245"
+        })
+})
