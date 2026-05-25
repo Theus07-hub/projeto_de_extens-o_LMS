@@ -7,20 +7,40 @@
 </head>
 <body>
     <header>
+        <input search="text" placeholder="Digite o ID do Aluno">
         <h1>Perfil Robson Henrique</h1>
     </header>
 
     <nav>
-        <image src="robson-henrique.image.png" alt="Foto do aluno Robson Henrique" class="card-img">
-    </nav>
-
-    <table>
+        <image src="/public/image/Robson_hernique.image.png" alt="Foto do aluno Robson Henrique" class="card-img">
+        <strong>Notas do Aluno</strong><br>
+    <br>
+            <table>
         <tr>
-            <th>Disciplina</th>
-            <th>Nota</th>
-            <th>Frequência</th>
+                <th>Disciplina</th>
+                <th>Nota</th>
+                <th>Frequência</th>
+        </tr>
+        
+        <tr>
+            <td>Planejamento, controle e gerenciamento de materiais</td>
+            <td><input type="number" min="0" max="10" step="0.1" placeholder="Insira a nota"></td>
+            <td><input type="text" placeholder="Insira a frequência"></td>
+        </tr>
+
+        <tr>
+            <td>Logística Reversa</td>
+            <td><input type="number" min="0" max="10" step="0.1" placeholder="Insira a nota"></td>
+            <td><input type="text" placeholder="Insira a frequência"></td>
+        </tr>
+
+        <tr>
+            <td>Logística Internacional e Comércio Exterio</td>
+            <td><input type="number" min="0" max="10" step="0.1" placeholder="Insira a nota"></td>
+            <td><input type="text" placeholder="Insira a frequência"></td>
         </tr>
     </table>
+</nav>
 
     <footer>
         <a href="/alunos">Voltar para a lista de alunos</a>

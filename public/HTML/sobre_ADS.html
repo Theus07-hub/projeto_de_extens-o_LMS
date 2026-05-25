@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADS - Análise e Desenvolvimento de Sistemas</title>
+
+    <link rel="stylesheet" href="../CSS/sobre_ads.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <ul class="menu"></ul>
+    </nav>
+</header>
+
+<main class="ads-page">
+    <section class="ads-header">
+        <h1>ADS (Análise e Desenvolvimento de Sistemas) – T.I</h1>
+
+        <p class="ads-text">
+            O curso de Análise e Desenvolvimento de Sistemas forma profissionais preparados para atuar na área de tecnologia da informação, desenvolvendo sistemas, aplicativos, sites e soluções digitais para empresas e usuários.
+            Durante a formação, o aluno aprende lógica de programação, banco de dados, desenvolvimento web, segurança da informação e análise de sistemas, além de trabalhar com linguagens de programação e ferramentas modernas do mercado.
+        </p>
+
+        <!-- imagem destacada entre os textos -->
+        <figure class="ads-feature-image">
+            <img src="/image/programa.image.jpg" alt="Imagem de uma pessoa programando" />
+        </figure>
+
+        <p class="ads-text">
+            A área de T.I está em constante crescimento e oferece diversas oportunidades profissionais, como desenvolvedor de software, analista de sistemas, suporte técnico, banco de dados e segurança digital.
+            O profissional de ADS é responsável por criar soluções tecnológicas que ajudam empresas a otimizar processos, aumentar produtividade e inovar no mercado digital.
+        </p>
+    </section>
+
+    <section class="ads-quiz">
+        <h2>Quiz</h2>
+
+        <div class="container">
+            <div class="quiz-container" id="quiz">
+                <div class="quiz-header">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+                <div id="start-screen" class="start-screen">
+                    <p class="start-text">
+                        Você está prestes a iniciar o quiz referente a página e o curso! O tempo começa quando você clicar em <b>Começar</b>.
+                    </p>
+                    <button class="btn btn-primary" id="start-btn">Começar</button>
+                </div>
+
+                <div id="question-container" class="question-container" style="display:none;">
+                    <p class="question" id="question"></p>
+                    <div class="options" id="options"></div>
+                </div>
+
+                <div class="quiz-footer" id="quiz-footer" style="display:none;">
+                    <div class="timer" id="timer">Time: 30s</div>
+                    <button class="btn btn-primary" id="next-btn">Next</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <a class="links-extras" href="cursos.html">Voltar para o menu de cursos</a> 
+</footer>
+
+<script src="../javascript/quiz_ads.js"></script>
+</body>
+</html>
+
