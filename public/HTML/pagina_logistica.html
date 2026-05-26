@@ -1,55 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="logistica.css">
+    <title>Curso de Logística</title>
+
+    <link rel="stylesheet" href="/public/CSS/pagina.css">
 </head>
-<body>
-    
-    <nav>
-        <header>
-            Menu
-        </header>
+<body class="course-page page-logistica">
+
+<header>
+    <nav class="navbar">
+        <ul class="menu">
+            <li>Menu</li>
+        </ul>
     </nav>
+</header>
 
-    <main>
-        <h1>Curso de Logistica</h1>
-        <p1>
-            Logística<br>
+<main>
+    <section class="course-section">
+        <h1>Curso de Logística</h1>
 
-A Logística é a área responsável por planejar, organizar e controlar o transporte, o armazenamento e a distribuição de produtos, materiais e informações. O curso ensina como fazer mercadorias chegarem ao lugar certo, no tempo certo, com o menor custo possível e mantendo a qualidade do processo. Durante a formação, o estudante aprende sobre estoque, transporte, cadeia de suprimentos, compras, armazenagem, distribuição, custos, tecnologia e gestão.
-As áreas de atuação da Logística incluem transportadoras, indústrias, supermercados, centros de distribuição, portos, aeroportos, empresas de e-commerce, hospitais, fábricas e comércios em geral. O profissional pode trabalhar com controle de estoque, roteirização de entregas, compras, recebimento de mercadorias, expedição, gestão de armazéns, importação, exportação e análise de processos. É uma área essencial para empresas que dependem de organização e eficiência.
-No dia a dia, a Logística aparece quando uma compra online chega em casa, quando um supermercado mantém produtos nas prateleiras ou quando uma fábrica recebe materiais para produzir. Usar a Logística significa pensar em planejamento, tempo, espaço, custo e organização. É uma área indicada para pessoas que gostam de resolver problemas práticos, melhorar processos, trabalhar com planejamento e entender como produtos se movimentam até chegar ao consumidor.
-        </p1>
-    </main>
+        <p>
+            A Logística é a área responsável por planejar, organizar e controlar o transporte, o armazenamento e a distribuição de produtos, materiais e informações. O curso ensina como fazer mercadorias chegarem ao lugar certo, no tempo certo, com o menor custo possível e mantendo a qualidade do processo. Durante a formação, o estudante aprende sobre estoque, transporte, cadeia de suprimentos, compras, armazenagem, distribuição, custos, tecnologia e gestão.
+        </p>
 
-    <div class="quiz-box">
-        <h2>Quiz de Engenharia</h2>
+        <p>
+            As áreas de atuação da Logística incluem transportadoras, indústrias, supermercados, centros de distribuição, portos, aeroportos, empresas de e-commerce, hospitais, fábricas e comércios em geral. O profissional pode trabalhar com controle de estoque, roteirização de entregas, compras, recebimento de mercadorias, expedição, gestão de armazéns, importação, exportação e análise de processos. É uma área essencial para empresas que dependem de organização e eficiência.
+        </p>
 
-        <div class="question">
-            <h3>1. Qual habilidade é muito importante para um engenheiro?</h3>
-            <label><input type="radio" name="eng1"> Criatividade e resolução de problemas</label>
-            <label><input type="radio" name="eng1"> Apenas decorar fórmulas</label>
-            <label><input type="radio" name="eng1"> Trabalhar sem planejamento</label>
+        <p>
+            No dia a dia, a Logística aparece quando uma compra online chega em casa, quando um supermercado mantém produtos nas prateleiras ou quando uma fábrica recebe materiais para produzir. Usar a Logística significa pensar em planejamento, tempo, espaço, custo e organização. É uma área indicada para pessoas que gostam de resolver problemas práticos, melhorar processos, trabalhar com planejamento e entender como produtos se movimentam até chegar ao consumidor.
+        </p>
+
+        <div class="quiz-box">
+            <h2>Quiz de Logística</h2>
+
+            <div class="question">
+                <h3>1. A Logística é responsável principalmente por:</h3>
+
+                <label>
+                    <input type="radio" name="log1" data-correct="true">
+                    Planejar transporte, armazenamento e distribuição
+                </label>
+
+                <label>
+                    <input type="radio" name="log1">
+                    Realizar cirurgias e diagnósticos médicos
+                </label>
+
+                <label>
+                    <input type="radio" name="log1">
+                    Criar treinos físicos para atletas
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>2. Qual é um dos principais objetivos da Logística?</h3>
+
+                <label>
+                    <input type="radio" name="log2" data-correct="true">
+                    Reduzir custos e melhorar a eficiência das entregas
+                </label>
+
+                <label>
+                    <input type="radio" name="log2">
+                    Aumentar atrasos e dificultar processos
+                </label>
+
+                <label>
+                    <input type="radio" name="log2">
+                    Trabalhar apenas com alimentação saudável
+                </label>
+            </div>
+
+            <button class="quiz-btn">Finalizar Quiz</button>
         </div>
-
-        <div class="question">
-            <h3>2. A Engenharia está relacionada principalmente a:</h3>
-            <label><input type="radio" name="eng2"> Criação de soluções técnicas</label>
-            <label><input type="radio" name="eng2"> Somente atividades artísticas</label>
-            <label><input type="radio" name="eng2"> Apenas atendimento hospitalar</label>
-        </div>
-
-        <button class="quiz-btn">Finalizar Quiz</button>
-    </div>
-
-<script search="/public/javascript/"></script>
+    </section>
+</main>
 
 <footer>
-    <a rel="Volta de pagina" href="cursos.html">Voltar para o menu de Cursos</a>
+    <a class="links-extras" href="/public/HTML/cursos.html">Voltar para o menu de Cursos</a>
 </footer>
 
+<script src="/public/javascript/quiz-cursos.js"></script>
 </body>
 </html>
