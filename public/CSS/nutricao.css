@@ -1,0 +1,459 @@
+/* =========================================
+   NUTRICAO.CSS
+   ESTILO ORGANICO / NATURAL / PREMIUM
+========================================= */
+
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    /* PALETA NATURAL */
+    --bg-main: #f6fff8;
+    --bg-soft: #ecfdf3;
+
+    --green-main: #2d6a4f;
+    --green-light: #52b788;
+
+    --cream: #fff8e8;
+    --orange-soft: #f4a261;
+
+    --text-main: #1b4332;
+    --text-soft: #5f7168;
+
+    --shadow-main:
+        0 12px 35px rgba(82,183,136,0.12);
+
+    --border-main:
+        rgba(45,106,79,0.08);
+
+    --gradient-main:
+        linear-gradient(
+            135deg,
+            #52b788,
+            #95d5b2
+        );
+}
+
+/* BODY */
+body{
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, rgba(82,183,136,0.08), transparent 20%),
+        radial-gradient(circle at bottom right, rgba(244,162,97,0.08), transparent 20%),
+        linear-gradient(
+            180deg,
+            #f6fff8,
+            #effaf2
+        );
+
+    color: var(--text-main);
+
+    min-height: 100vh;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header{
+
+    background: rgba(255,255,255,0.92);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(45,106,79,0.08);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.navbar{
+    width: 90%;
+    margin: auto;
+
+    padding: 20px 0;
+}
+
+.menu{
+
+    display: flex;
+    justify-content: center;
+
+    list-style: none;
+}
+
+.menu a{
+
+    text-decoration: none;
+
+    color: var(--green-main);
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.menu a:hover{
+
+    color: var(--orange-soft);
+}
+
+/* ===========================
+   MAIN
+=========================== */
+main{
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 50px auto;
+}
+
+/* ===========================
+   COURSE SECTION
+=========================== */
+.course-section{
+
+    background: rgba(255,255,255,0.82);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 35px;
+
+    padding: 60px;
+
+    box-shadow: var(--shadow-main);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* FOLHAS DECORATIVAS */
+.course-section::before{
+
+    content: "🍃";
+
+    position: absolute;
+
+    top: 20px;
+    right: 40px;
+
+    font-size: 5rem;
+
+    opacity: 0.12;
+}
+
+.course-section::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: -80px;
+    bottom: -80px;
+
+    width: 250px;
+    height: 250px;
+
+    background:
+        radial-gradient(
+            rgba(82,183,136,0.12),
+            transparent 70%
+        );
+
+    border-radius: 50%;
+}
+
+/* TITULO */
+.course-section h1{
+
+    font-size: 3.5rem;
+
+    color: var(--green-main);
+
+    margin-bottom: 35px;
+
+    position: relative;
+}
+
+/* LINHA NATURAL */
+.course-section h1::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 140px;
+    height: 5px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--green-light),
+            var(--orange-soft)
+        );
+}
+
+/* TEXTO */
+.course-section p{
+
+    color: var(--text-soft);
+
+    font-size: 1.08rem;
+
+    line-height: 2.1;
+
+    margin-bottom: 28px;
+
+    text-align: justify;
+}
+
+/* ===========================
+   QUIZ
+=========================== */
+.quiz-box{
+
+    margin-top: 50px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.95),
+            rgba(236,253,243,0.85)
+        );
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    border: 1px solid rgba(82,183,136,0.10);
+
+    box-shadow:
+        0 8px 25px rgba(82,183,136,0.08);
+
+    position: relative;
+}
+
+/* TAG SAUDÁVEL */
+.quiz-box::before{
+
+    content: "HEALTHY";
+
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    background: var(--green-light);
+
+    color: white;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+/* TITULO QUIZ */
+.quiz-box h2{
+
+    color: var(--orange-soft);
+
+    font-size: 2rem;
+
+    margin-bottom: 35px;
+}
+
+/* QUESTÕES */
+.question{
+
+    margin-bottom: 30px;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,1),
+            rgba(246,255,248,0.9)
+        );
+
+    border: 1px solid rgba(82,183,136,0.06);
+
+    transition: 0.3s ease;
+}
+
+/* HOVER */
+.question:hover{
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(82,183,136,0.10);
+}
+
+/* TITULO QUESTAO */
+.question h3{
+
+    color: var(--green-main);
+
+    margin-bottom: 18px;
+
+    font-size: 1.15rem;
+}
+
+/* LABEL */
+.question label{
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.question label:hover{
+
+    background: rgba(82,183,136,0.06);
+}
+
+/* RADIO */
+.question input[type="radio"]{
+
+    accent-color: var(--green-light);
+
+    transform: scale(1.15);
+}
+
+/* ===========================
+   BOTÃO
+=========================== */
+.quiz-btn{
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #52b788,
+            #95d5b2
+        );
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.quiz-btn:hover{
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(82,183,136,0.20);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer{
+
+    margin-top: 60px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.8);
+
+    border-top: 1px solid rgba(82,183,136,0.08);
+}
+
+.links-extras{
+
+    text-decoration: none;
+
+    color: var(--green-main);
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.links-extras:hover{
+
+    color: var(--orange-soft);
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+@media(max-width: 768px){
+
+    .course-section{
+        padding: 30px;
+    }
+
+    .course-section h1{
+        font-size: 2.2rem;
+    }
+
+    .course-section p{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .quiz-box{
+        padding: 25px;
+    }
+
+    .quiz-box h2{
+        font-size: 1.5rem;
+    }
+
+    .quiz-box::before{
+        display: none;
+    }
+}

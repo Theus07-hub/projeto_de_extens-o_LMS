@@ -1,0 +1,446 @@
+/* ===================================
+   ENGENHARIA.CSS
+   ESTILO INDUSTRIAL / TÉCNICO
+=================================== */
+
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    /* PALETA INDUSTRIAL */
+    --bg-dark: #111827;
+    --bg-metal: #1f2937;
+    --bg-card: #202b3d;
+
+    --orange-main: #ff8c00;
+    --yellow-main: #ffc300;
+
+    --steel: #94a3b8;
+    --white: #f8fafc;
+
+    --border: rgba(255,140,0,0.2);
+
+    --shadow:
+        0 0 25px rgba(255,140,0,0.12);
+
+    --gradient-main:
+        linear-gradient(
+            135deg,
+            #ff8c00,
+            #ffc300
+        );
+}
+
+/* BODY */
+body{
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 80px,
+            rgba(255,255,255,0.03) 81px
+        ),
+        linear-gradient(
+            180deg,
+            #111827,
+            #0b1120
+        );
+
+    color: var(--white);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+/* ===============================
+   HEADER
+=============================== */
+header{
+    width: 100%;
+
+    background: rgba(10,10,10,0.85);
+
+    border-bottom: 2px solid var(--orange-main);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(8px);
+}
+
+.navbar{
+    width: 90%;
+    margin: auto;
+
+    padding: 20px 0;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+
+    list-style: none;
+}
+
+.menu a{
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.menu a::after{
+    content: "";
+
+    position: absolute;
+
+    width: 0%;
+    height: 2px;
+
+    left: 0;
+    bottom: -5px;
+
+    background: var(--orange-main);
+
+    transition: 0.3s;
+}
+
+.menu a:hover::after{
+    width: 100%;
+}
+
+.menu a:hover{
+    color: var(--orange-main);
+}
+
+/* ===============================
+   MAIN
+=============================== */
+main{
+    width: 90%;
+    max-width: 1300px;
+
+    margin: 50px auto;
+}
+
+/* ===============================
+   COURSE SECTION
+=============================== */
+.course-section{
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31,41,55,0.95),
+            rgba(17,24,39,0.98)
+        );
+
+    border-left: 8px solid var(--orange-main);
+
+    padding: 60px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+/* EFEITO INDUSTRIAL */
+.course-section::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: -100px;
+
+    width: 300px;
+    height: 300px;
+
+    background:
+        radial-gradient(
+            rgba(255,140,0,0.15),
+            transparent 70%
+        );
+
+    transform: rotate(25deg);
+}
+
+/* TITULO */
+.course-section h1{
+    font-size: 4rem;
+
+    margin-bottom: 35px;
+
+    text-transform: uppercase;
+
+    color: var(--orange-main);
+
+    letter-spacing: 3px;
+
+    border-bottom: 2px solid rgba(255,140,0,0.2);
+
+    padding-bottom: 15px;
+}
+
+/* TEXTO */
+.course-section p{
+    font-size: 1.1rem;
+
+    line-height: 2.1;
+
+    color: var(--steel);
+
+    margin-bottom: 30px;
+
+    text-align: justify;
+}
+
+/* ===============================
+   QUIZ
+=============================== */
+.quiz-box{
+
+    margin-top: 50px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.01)
+        );
+
+    border: 1px solid var(--border);
+
+    padding: 40px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* DETALHE INDUSTRIAL */
+.quiz-box::before{
+    content: "ENG";
+
+    position: absolute;
+
+    top: -20px;
+    right: 20px;
+
+    font-size: 6rem;
+    font-weight: bold;
+
+    color: rgba(255,255,255,0.03);
+}
+
+/* TITULO QUIZ */
+.quiz-box h2{
+    color: var(--yellow-main);
+
+    font-size: 2rem;
+
+    margin-bottom: 35px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+/* QUESTÕES */
+.question{
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    border-left: 4px solid transparent;
+
+    background: rgba(255,255,255,0.02);
+
+    transition: 0.3s ease;
+}
+
+.question:hover{
+    border-left: 4px solid var(--orange-main);
+
+    background: rgba(255,140,0,0.04);
+
+    transform: translateX(5px);
+}
+
+/* TITULO QUESTAO */
+.question h3{
+    margin-bottom: 20px;
+
+    color: var(--white);
+
+    font-size: 1.2rem;
+}
+
+/* LABELS */
+.question label{
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.question label:hover{
+    background: rgba(255,140,0,0.06);
+}
+
+/* RADIO */
+.question input[type="radio"]{
+    accent-color: var(--orange-main);
+
+    transform: scale(1.2);
+}
+
+/* ===============================
+   BOTÃO
+=============================== */
+.quiz-btn{
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    background: var(--gradient-main);
+
+    color: #111;
+
+    font-weight: bold;
+
+    font-size: 1rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* EFEITO BOTAO */
+.quiz-btn::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.3),
+            transparent
+        );
+
+    transition: 0.5s;
+}
+
+.quiz-btn:hover::before{
+    left: 100%;
+}
+
+.quiz-btn:hover{
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 20px rgba(255,140,0,0.25);
+}
+
+/* ===============================
+   FOOTER
+=============================== */
+footer{
+    margin-top: 60px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255,140,0,0.2);
+
+    background: rgba(0,0,0,0.4);
+}
+
+.links-extras{
+    text-decoration: none;
+
+    color: var(--orange-main);
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.links-extras:hover{
+    color: var(--yellow-main);
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+@media(max-width: 768px){
+
+    .course-section{
+        padding: 30px;
+    }
+
+    .course-section h1{
+        font-size: 2.3rem;
+    }
+
+    .course-section p{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .quiz-box{
+        padding: 25px;
+    }
+
+    .quiz-box h2{
+        font-size: 1.5rem;
+    }
+}

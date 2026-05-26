@@ -1,0 +1,509 @@
+/* ======================================
+   LOGISTICA.CSS
+   ESTILO TRANSPORTE / OPERAÇÃO / HUB
+====================================== */
+
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    /* PALETA LOGÍSTICA */
+    --bg-main: #0f172a;
+    --bg-secondary: #111827;
+    --card-bg: #1e293b;
+
+    --yellow-main: #facc15;
+    --orange-main: #f97316;
+
+    --text-main: #f8fafc;
+    --text-secondary: #cbd5e1;
+
+    --line-color: rgba(250,204,21,0.15);
+
+    --shadow-main:
+        0 0 30px rgba(250,204,21,0.08);
+
+    --gradient-main:
+        linear-gradient(
+            135deg,
+            #facc15,
+            #f97316
+        );
+}
+
+/* BODY */
+body{
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        linear-gradient(rgba(15,23,42,0.92), rgba(15,23,42,0.95)),
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 40px,
+            rgba(255,255,255,0.02) 41px
+        ),
+        #0f172a;
+
+    color: var(--text-main);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header{
+
+    background: rgba(10,15,25,0.92);
+
+    border-bottom: 3px solid var(--yellow-main);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(8px);
+}
+
+.navbar{
+    width: 90%;
+    margin: auto;
+
+    padding: 22px 0;
+}
+
+.menu{
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.menu li{
+    color: var(--yellow-main);
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+/* ==========================
+   MAIN
+========================== */
+main{
+    width: 90%;
+    max-width: 1350px;
+
+    margin: 50px auto;
+}
+
+/* ==========================
+   COURSE SECTION
+========================== */
+.course-section{
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,0.96),
+            rgba(15,23,42,0.98)
+        );
+
+    border: 1px solid rgba(250,204,21,0.08);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-main);
+}
+
+/* LINHA DE MAPA/ROTA */
+.course-section::before{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            var(--yellow-main),
+            var(--yellow-main) 40px,
+            transparent 40px,
+            transparent 65px
+        );
+}
+
+/* GRID DE FUNDO */
+.course-section::after{
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.015) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.015) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+    pointer-events: none;
+}
+
+/* CONTEUDO */
+.course-section{
+    padding: 60px;
+}
+
+/* TITULO */
+.course-section h1{
+
+    font-size: 4rem;
+
+    color: var(--yellow-main);
+
+    margin-bottom: 35px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    position: relative;
+
+    display: inline-block;
+}
+
+/* LINHA TITULO */
+.course-section h1::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 80%;
+    height: 4px;
+
+    background: var(--gradient-main);
+}
+
+/* TEXTO */
+.course-section p{
+
+    color: var(--text-secondary);
+
+    font-size: 1.08rem;
+
+    line-height: 2.1;
+
+    margin-bottom: 28px;
+
+    text-align: justify;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+/* ==========================
+   QUIZ
+========================== */
+.quiz-box{
+
+    margin-top: 50px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.01)
+        );
+
+    border: 1px solid rgba(250,204,21,0.08);
+
+    padding: 40px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* TAG OPERACIONAL */
+.quiz-box::before{
+
+    content: "SUPPLY CHAIN";
+
+    position: absolute;
+
+    top: 20px;
+    right: -40px;
+
+    background: var(--yellow-main);
+
+    color: #111827;
+
+    padding: 10px 60px;
+
+    transform: rotate(35deg);
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    font-size: 0.8rem;
+}
+
+/* TITULO QUIZ */
+.quiz-box h2{
+
+    font-size: 2rem;
+
+    margin-bottom: 35px;
+
+    color: var(--orange-main);
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+/* QUESTÕES */
+.question{
+
+    margin-bottom: 30px;
+
+    padding: 25px;
+
+    background: rgba(255,255,255,0.02);
+
+    border-left: 5px solid transparent;
+
+    transition: 0.3s ease;
+
+    position: relative;
+}
+
+/* EFEITO HOVER */
+.question:hover{
+
+    border-left: 5px solid var(--yellow-main);
+
+    transform: translateX(6px);
+
+    background: rgba(250,204,21,0.04);
+}
+
+/* NUMERAÇÃO */
+.question::before{
+
+    content: "•";
+
+    position: absolute;
+
+    left: -18px;
+    top: 22px;
+
+    color: var(--yellow-main);
+
+    font-size: 1.5rem;
+}
+
+/* TITULO QUESTÃO */
+.question h3{
+
+    margin-bottom: 18px;
+
+    font-size: 1.15rem;
+
+    color: var(--text-main);
+}
+
+/* LABELS */
+.question label{
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.question label:hover{
+
+    background: rgba(250,204,21,0.05);
+}
+
+/* RADIO */
+.question input[type="radio"]{
+
+    accent-color: var(--yellow-main);
+
+    transform: scale(1.15);
+}
+
+/* ==========================
+   BOTÃO
+========================== */
+.quiz-btn{
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    background: var(--gradient-main);
+
+    color: #111827;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* EFEITO MOVIMENTO */
+.quiz-btn::before{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.25),
+            transparent
+        );
+
+    transition: 0.5s;
+}
+
+.quiz-btn:hover::before{
+    left: 100%;
+}
+
+.quiz-btn:hover{
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(250,204,21,0.2);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer{
+
+    margin-top: 60px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(250,204,21,0.1);
+
+    background: rgba(0,0,0,0.3);
+}
+
+.links-extras{
+
+    color: var(--yellow-main);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.links-extras:hover{
+    color: var(--orange-main);
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+@media(max-width: 768px){
+
+    .course-section{
+        padding: 30px;
+    }
+
+    .course-section h1{
+        font-size: 2.2rem;
+    }
+
+    .course-section p{
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .quiz-box{
+        padding: 25px;
+    }
+
+    .quiz-box::before{
+        display: none;
+    }
+
+    .quiz-box h2{
+        font-size: 1.5rem;
+    }
+}
