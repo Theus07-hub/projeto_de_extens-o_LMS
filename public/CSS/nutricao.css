@@ -64,7 +64,6 @@ header{
 
     background: rgba(255,255,255,0.92);
 
-    backdrop-filter: blur(10px);
 
     border-bottom: 1px solid rgba(45,106,79,0.08);
 
@@ -124,8 +123,6 @@ main{
 .course-section{
 
     background: rgba(255,255,255,0.82);
-
-    backdrop-filter: blur(10px);
 
     border-radius: 35px;
 

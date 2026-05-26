@@ -71,7 +71,6 @@ header{
 
     z-index: 1000;
 
-    backdrop-filter: blur(8px);
 }
 
 .navbar{

@@ -44,7 +44,6 @@ body{
 header{
     width: 100%;
     padding: 20px 0;
-    backdrop-filter: blur(10px);
     background: rgba(0,0,0,0.15);
     border-bottom: var(--border-main);
     position: sticky;
@@ -100,7 +99,6 @@ header{
     border-radius: 25px;
 
     box-shadow: var(--shadow-main);
-    backdrop-filter: blur(12px);
 }
 
 .ads-header h1{
@@ -188,7 +186,6 @@ header{
 
     box-shadow: var(--shadow-main);
 
-    backdrop-filter: blur(10px);
 }
 
 /* =========================
