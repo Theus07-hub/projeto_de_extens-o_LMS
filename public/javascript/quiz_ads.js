@@ -35,8 +35,6 @@ const quizData = [
         correct: 1
     }
 ];
-
-// Permite que o quiz seja iniciado apenas quando o usuário clicar em "Começar".
 let started = false;
 
 let currentQuestion = 0;
@@ -163,4 +161,6 @@ if (startBtn) {
     // fallback: se não existir o botão, começa imediatamente (compatibilidade)
     loadQuestion();
 }
+
+// Permite que o quiz seja iniciado apenas quando o usuário clicar em "Começar".
 

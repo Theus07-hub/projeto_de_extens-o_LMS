@@ -141,7 +141,7 @@ function showResults() {
                     <p>${score > quizData.length / 2 ? 'Great job!' : 'Better luck next time!'}</p>
                     <button class="btn btn-primary" onclick="location.reload()">Restart Quiz</button>
 
-                    <a href="../HTML/perfil_(B).html"> Voltar ao perfil </a>
+                    <a href="../HTML/perfil_(G).html"> Voltar ao perfil </a>
                 </div>
             `;
 }

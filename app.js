@@ -34,11 +34,11 @@ app.get('/perfil_matheus', (req, res) => {
 })
 
 app.get('/perfil_gabi', (req, res) => {
-    res.sendFile(__dirname + '/public/HTML/perfil_(M).html')
+    res.sendFile(__dirname + '/public/HTML/perfil_(G).html')
 })
 
 app.get('/perfil_bruno', (req, res) => {
-    res.sendFile(__dirname + '/public/HTML/perfil_(M).html')
+    res.sendFile(__dirname + '/public/HTML/perfil_(B).html')
 })
 
 app.get('/perfil_marcos', (req, res) => {
@@ -71,5 +71,29 @@ app.get('/matricular_nutricao', (req, res) => {
 
 app.get('/matricular_engenharia', (req, res) => {
     res.sendFile(__dirname + '/public/HTML/pagina_engenharia.html')
+})
+
+app.get('/quiz_ads', (req, res) => {
+    res.sendFile(__dirname + '/public/HTML/quiz_ads.html')
+})
+
+app.get('/quiz_educacao_fisica', (req, res) => {
+    res.sendFile(__dirname + '/public/HTML/quiz_educacao_fisica.html')
+})
+
+app.get('/quiz_engenharia', (req, res) => {
+    res.sendFile(__dirname + '/public/HTML/quiz_engenharia.html')
+})
+
+app.get('/quiz_logistica', (req, res) => {
+    res.sendFile(__dirname + '/public/HTML/quiz_logistica.html')
+})
+
+app.get('/quiz_medicina', (req, res) => {
+    res.sendFile(__dirname + '/public/HTML/pagina_medicina.html')
+})
+
+app.get('/quiz_nutricao', (req, res) => {
+    res.sendFile(__dirname + '/public/HTML/quiz_nutricao.html')
 })
 module.exports = app
