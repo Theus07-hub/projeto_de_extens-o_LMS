@@ -1,0 +1,150 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        header {
+            background: #0033A0;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header input {
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            width: 250px;
+            outline: none;
+        }
+
+        nav {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #0033A0;
+            margin-bottom: 20px;
+        }
+
+        nav p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            color: #0033A0;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            font-size: 1.1rem;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background: #0033A0;
+            color: white;
+            padding: 12px;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background: #f2f2f2;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            width: 120px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        footer {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        footer a {
+            text-decoration: none;
+            background: #0033A0;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            background: #001f66;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            header input {
+                width: 100%;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            input[type="number"] {
+                width: 100%;
+            }
+        }
+.btn-quiz{
+    padding: 10px;
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+    border-radius: 20px;
+    background: black;
+    font-size: 20px;
+    border: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-quiz:hover{
+    color: red;
+    transition: 1s;
+}
+
+

@@ -41,7 +41,7 @@ let started = false;
 
 let currentQuestion = 0;
 let score = 0;
-let timer;
+let timer = 30;
 let timeLeft = 30;
 
 const questionEl = document.getElementById('question');
@@ -125,6 +125,8 @@ function showResults() {
                     <div class="score">Your score: ${score}/${quizData.length}</div>
                     <p>${score > quizData.length / 2 ? 'Great job!' : 'Better luck next time!'}</p>
                     <button class="btn btn-primary" onclick="location.reload()">Restart Quiz</button>
+
+                    <a href="../HTML/perfil_(B).html"> Voltar ao perfil </a>
                 </div>
             `;
 }

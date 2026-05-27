@@ -1,164 +1,181 @@
-const quizConfig = {
-    nome: "Nutrição",
-    tempo: 30,
-    frases: {
-        perfeito: "Excelente! Você mostrou que entende muito bem a importância da alimentação e da saúde.",
-        bom: "Muito bom! Você tem uma boa noção sobre Nutrição, mas ainda pode revisar alguns pontos.",
-        medio: "Você foi bem, mas ainda precisa estudar um pouco mais sobre o papel do nutricionista.",
-        baixo: "Continue estudando! A Nutrição é uma área rica e cheia de detalhes importantes."
+const quizData = [
+    {
+        question: "Qual macronutriente é a principal fonte de energia rápida para o corpo?",
+        options: [
+            "Proteínas",
+            "Carboidratos",
+            "Gorduras (Lipídios)",
+            "Fibras"
+        ],
+        correct: 1
+    },
+    {
+        question: "Qual vitamina é sintetizada pela pele quando exposta à luz solar?",
+        options: [
+            "Vitamina C",
+            "Vitamina A",
+            "Vitamina D",
+            "Vitamina B12"
+        ],
+        correct: 2
+    },
+    {
+        question: "Qual é a principal função das proteínas no organismo?",
+        options: [
+            "Reserva de energia a longo prazo",
+            "Construção e reparação de tecidos (músculos)",
+            "Transporte de oxigênio apenas",
+            "Hidratação das células"
+        ],
+        correct: 1
+    },
+    {
+        question: "Onde ocorre a maior parte da absorção de nutrientes no sistema digestório?",
+        options: [
+            "Estômago",
+            "Intestino Delgado",
+            "Intestino Grosso",
+            "Esôfago"
+        ],
+        correct: 1
+    },
+    {
+        question: "Qual mineral é essencial para o transporte de oxigênio no sangue e prevenção da anemia?",
+        options: [
+            "Cálcio",
+            "Potássio",
+            "Ferro",
+            "Magnésio"
+        ],
+        correct: 2
     }
-};
+];
 
-document.addEventListener("DOMContentLoaded", function () {
-    const quiz = document.querySelector(".quiz-box");
-    if (!quiz) return;
+// Permite que o quiz seja iniciado apenas quando o usuário clicar em "Começar".
+let started = false;
 
-    const questions = Array.from(quiz.querySelectorAll(".question"));
-    const oldButton = quiz.querySelector(".quiz-btn");
+let currentQuestion = 0;
+let score = 0;
+let timer = 30;
+let timeLeft = 30;
 
-    if (oldButton) {
-        oldButton.remove();
-    }
+const questionEl = document.getElementById('question');
+const optionsEl = document.getElementById('options');
+const nextBtn = document.getElementById('next-btn');
+const timerEl = document.getElementById('timer');
+const progressBar = document.querySelector('.progress-bar');
+const quizContainer = document.getElementById('quiz');
 
-    let currentQuestion = 0;
-    let score = 0;
-    let timeLeft = quizConfig.tempo;
-    let timerInterval = null;
-    let quizFinished = false;
+function loadQuestion() {
+    const question = quizData[currentQuestion];
+    questionEl.textContent = question.question;
+    optionsEl.innerHTML = '';
 
-    questions.forEach(function (question) {
-        question.style.display = "none";
+    question.options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.textContent = option;
+        button.classList.add('option');
+        button.addEventListener('click', () => selectOption(button, index));
+        optionsEl.appendChild(button);
     });
 
-    const startScreen = document.createElement("div");
-    startScreen.className = "start-screen";
-    startScreen.innerHTML = `
-        <p class="start-text">
-            Você está prestes a iniciar o quiz de ${quizConfig.nome}. O tempo começa quando clicar em <b>Começar</b>.
-        </p>
-        <button class="btn btn-primary" id="start-btn">Começar</button>
-    `;
+    nextBtn.style.display = 'none';
+    timeLeft = 30;
 
-    const footer = document.createElement("div");
-    footer.className = "quiz-footer";
-    footer.style.display = "none";
-    footer.innerHTML = `
-        <div class="timer" id="timer">Tempo: ${timeLeft}s</div>
-        <button class="btn btn-primary" id="next-btn">Próxima</button>
-    `;
+    if (timer) clearInterval(timer);
+    startTimer();
+    updateProgress();
+}
 
-    const result = document.createElement("div");
-    result.className = "quiz-result";
-    result.style.display = "none";
 
-    const title = quiz.querySelector("h2");
-    title.insertAdjacentElement("afterend", startScreen);
-    quiz.appendChild(footer);
-    quiz.appendChild(result);
+function selectOption(selectedButton, optionIndex) {
+    const buttons = optionsEl.getElementsByClassName('option');
+    Array.from(buttons).forEach(button => button.classList.remove('selected'));
+    selectedButton.classList.add('selected');
+    nextBtn.style.display = 'block';
+}
 
-    const startBtn = quiz.querySelector("#start-btn");
-    const nextBtn = quiz.querySelector("#next-btn");
-    const timer = quiz.querySelector("#timer");
+function startTimer() {
+    timer = setInterval(() => {
+        timeLeft--;
+        timerEl.textContent = `Time: ${timeLeft}s`;
+        if (timeLeft === 0) {
+            clearInterval(timer);
+            checkAnswer();
+        }
+    }, 1000);
+}
 
-    startBtn.addEventListener("click", startQuiz);
-    nextBtn.addEventListener("click", nextQuestion);
+function checkAnswer() {
+    const selectedOption = document.querySelector('.option.selected');
+    if (!selectedOption) return;
 
-    function startQuiz() {
-        startScreen.style.display = "none";
-        footer.style.display = "flex";
-        showQuestion();
-        startTimer();
+    const selectedAnswer = Array.from(optionsEl.children).indexOf(selectedOption);
+    const question = quizData[currentQuestion];
+
+    if (selectedAnswer === question.correct) {
+        score++;
+        selectedOption.classList.add('correct');
+    } else {
+        selectedOption.classList.add('incorrect');
+        optionsEl.children[question.correct].classList.add('correct');
     }
 
-    function startTimer() {
-        timerInterval = setInterval(function () {
-            timeLeft--;
-            timer.textContent = `Tempo: ${timeLeft}s`;
+    Array.from(optionsEl.children).forEach(button => button.disabled = true);
+    clearInterval(timer);
+}
 
-            if (timeLeft <= 0) {
-                finishQuiz();
-            }
-        }, 1000);
-    }
+function updateProgress() {
+    const progress = ((currentQuestion + 1) / quizData.length) * 100;
+    progressBar.style.width = `${progress}%`;
+    progressBar.setAttribute('aria-valuenow', progress);
+}
 
-    function showQuestion() {
-        questions.forEach(function (question) {
-            question.style.display = "none";
-        });
+function showResults() {
+    quizContainer.innerHTML = `
+                <div class="results">
+                    <div class="result-icon">
+                        <i class="fas ${score > quizData.length / 2 ? 'fa-trophy text-success' : 'fa-times-circle text-danger'}"></i>
+                    </div>
+                    <div class="score">Your score: ${score}/${quizData.length}</div>
+                    <p>${score > quizData.length / 2 ? 'Great job!' : 'Better luck next time!'}</p>
+                    <button class="btn btn-primary" onclick="location.reload()">Restart Quiz</button>
 
-        questions[currentQuestion].style.display = "block";
+                    <a href="../HTML/perfil_(B).html"> Voltar ao perfil </a>
+                </div>
+            `;
+}
 
-        if (currentQuestion === questions.length - 1) {
-            nextBtn.textContent = "Finalizar";
-        }
-    }
-
-    function nextQuestion() {
-        if (quizFinished) return;
-
-        const selected = questions[currentQuestion].querySelector("input[type='radio']:checked");
-
-        if (!selected) {
-            result.style.display = "block";
-            result.textContent = "Escolha uma alternativa antes de continuar.";
-            result.style.background = "rgba(255, 180, 60, 0.22)";
-            result.style.border = "1px solid rgba(255, 180, 60, 0.45)";
-            return;
-        }
-
-        result.style.display = "none";
-
-        if (selected.dataset.correct === "true") {
-            score++;
-        }
-
-        currentQuestion++;
-
-        if (currentQuestion < questions.length) {
-            showQuestion();
-        } else {
-            finishQuiz();
-        }
-    }
-
-    function finishQuiz() {
-        if (quizFinished) return;
-
-        quizFinished = true;
-        clearInterval(timerInterval);
-
-        questions.forEach(function (question) {
-            question.style.display = "none";
-        });
-
-        footer.style.display = "none";
-        result.style.display = "block";
-
-        const total = questions.length;
-        let frase = "";
-
-        if (score === total) {
-            frase = quizConfig.frases.perfeito;
-        } else if (score >= total * 0.7) {
-            frase = quizConfig.frases.bom;
-        } else if (score >= total * 0.4) {
-            frase = quizConfig.frases.medio;
-        } else {
-            frase = quizConfig.frases.baixo;
-        }
-
-        result.innerHTML = `
-            <strong>Resultado do quiz de ${quizConfig.nome}</strong><br>
-            Você acertou ${score} de ${total} perguntas.<br>
-            ${frase}
-        `;
-
-        result.style.background = score === total
-            ? "rgba(39, 201, 103, 0.22)"
-            : "rgba(255, 70, 70, 0.22)";
-
-        result.style.border = score === total
-            ? "1px solid rgba(39, 201, 103, 0.45)"
-            : "1px solid rgba(255, 70, 70, 0.45)";
+nextBtn.addEventListener('click', () => {
+    checkAnswer();
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+        loadQuestion();
+    } else {
+        showResults();
     }
 });
+
+// Tela inicial: mostra "Começar" e só inicia o cronômetro ao clicar.
+const startBtn = document.getElementById('start-btn');
+const startScreen = document.getElementById('start-screen');
+const questionContainer = document.getElementById('question-container');
+const quizFooter = document.getElementById('quiz-footer');
+
+if (startBtn) {
+    startBtn.addEventListener('click', () => {
+        started = true;
+        startScreen.style.display = 'none';
+        questionContainer.style.display = 'block';
+        quizFooter.style.display = 'flex';
+        // garante que comece do início
+        currentQuestion = 0;
+        score = 0;
+        // o loadQuestion() já inicializa o timer e o primeiro enunciado
+        loadQuestion();
+    });
+} else {
+    // fallback: se não existir o botão, começa imediatamente (compatibilidade)
+    loadQuestion();
+}
+
